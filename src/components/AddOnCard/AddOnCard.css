@@ -1,19 +1,20 @@
-/* src/components/AddOnCard/AddOnCard.css. Every value is a token. Logical properties only, so RTL needs no extra rules. */
-.addon-card { inline-size: var(--size-card-width); background: var(--card-surface); border: 1px solid var(--card-border-default); border-radius: var(--radius-card); overflow: hidden; display: flex; flex-direction: column; font-family: system-ui, sans-serif; }
-.addon-card[data-state='selected'] { border: 2px solid var(--card-border-selected); }
+/* src/components/AddOnCard/AddOnCard.css. Every value is a token except the literals noted below. Logical properties only, so RTL needs no extra rules. */
+/* Typography values here are literals on purpose. A later task exports text styles separately. */
+.addon-card { inline-size: 280px; background: var(--background-card); border: 1px solid var(--border-default); border-radius: var(--radius-12); overflow: hidden; display: flex; flex-direction: column; font-family: system-ui, sans-serif; }
+.addon-card[data-state='selected'] { border: 2px solid var(--border-selected); }
 .addon-card[data-state='disabled'] { opacity: 0.5; }
-.addon-card__media { position: relative; block-size: var(--size-media-height); background: var(--card-media-surface); display: grid; place-items: center; }
-.addon-card__placeholder { inline-size: 48px; block-size: 48px; border-radius: 50%; background: var(--card-media-placeholder); }
-.addon-card__badge { position: absolute; inset-block-start: 12px; inset-inline-end: 12px; padding: 4px 8px; border-radius: var(--radius-badge); background: var(--badge-discount-surface); color: var(--badge-discount-text); font-size: var(--font-size-label); font-weight: var(--font-weight-semibold); }
-.addon-card__body { display: flex; flex-direction: column; gap: var(--space-card-gap); padding: var(--space-card-padding); }
-.addon-card__title { margin: 0; font-size: var(--font-size-title); font-weight: var(--font-weight-semibold); color: var(--text-primary); }
+.addon-card__media { position: relative; block-size: 140px; background: var(--background-media); display: grid; place-items: center; }
+.addon-card__placeholder { inline-size: 48px; block-size: 48px; border-radius: 50%; background: color-mix(in srgb, var(--brand-primary) 15%, transparent); }
+.addon-card__badge { position: absolute; inset-block-start: 12px; inset-inline-end: 12px; padding: 4px 8px; border-radius: var(--radius-4); background: var(--background-discount); color: var(--text-on-brand); font-size: 11px; line-height: 16px; letter-spacing: 0.5px; font-weight: 700; }
+.addon-card__body { display: flex; flex-direction: column; gap: var(--spacing-8); padding: var(--spacing-16); }
+.addon-card__title { margin: 0; font-size: 16px; line-height: 24px; font-weight: 600; color: var(--text-primary); }
 .addon-card[data-state='disabled'] .addon-card__title { color: var(--text-disabled); }
-.addon-card__description { margin: 0; font-size: var(--font-size-body); color: var(--text-secondary); }
-.addon-card__row { display: flex; align-items: center; justify-content: space-between; gap: var(--space-row-gap); }
+.addon-card__description { margin: 0; font-size: 12px; line-height: 16px; color: var(--text-secondary); }
+.addon-card__row { display: flex; align-items: center; justify-content: space-between; gap: var(--spacing-8); }
 .addon-card__prices { display: flex; align-items: baseline; gap: 8px; }
-.addon-card__price { font-size: var(--font-size-price); font-weight: var(--font-weight-semibold); color: var(--price-text); }
-.addon-card__original { font-size: var(--font-size-body); color: var(--price-original); }
-.addon-card__cta { padding: 4px 12px; border-radius: var(--radius-pill); font-size: 12px; font-weight: var(--font-weight-semibold); cursor: pointer; }
-.addon-card__cta[data-variant='secondary'] { background: transparent; border: 1px solid var(--price-text); color: var(--price-text); }
-.addon-card__cta[data-variant='primary'] { background: var(--price-text); border: 1px solid var(--price-text); color: var(--card-surface); }
+.addon-card__price { font-size: 18px; line-height: 24px; font-weight: 700; color: var(--text-brand); }
+.addon-card__original { font-size: 12px; line-height: 16px; color: var(--text-tertiary); }
+.addon-card__cta { padding: 6px 16px; border-radius: var(--radius-full); font-size: 12px; line-height: 16px; letter-spacing: 0.2px; font-weight: 500; cursor: pointer; }
+.addon-card__cta[data-variant='secondary'] { background: transparent; border: 1.5px solid var(--border-brand); color: var(--text-brand); }
+.addon-card__cta[data-variant='primary'] { background: var(--background-brand); border: 1.5px solid var(--border-brand); color: var(--text-on-brand); }
 .addon-card__cta:disabled { cursor: not-allowed; }
