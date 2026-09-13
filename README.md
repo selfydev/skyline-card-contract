@@ -6,6 +6,7 @@ Built as part of a design system task. The Figma file is the source for tokens a
 
 ## What is here
 
+- Live preview of every variant: https://selfydev.github.io/skyline-card-contract/ (built from main by the pages workflow).
 - `tokens/` DTCG JSON exported from the Figma variable collections and text styles by `scripts/figma/export-tokens.js`, which runs inside Figma. Names are identical to Figma: `background/card` in Figma is `background.card` here and `--background-card` in CSS. Aliases are resolved to values at build time. Three names in the export carry inconsistent casing (`brand/Accent color`, `background/Primary`, `Heading/Heading2`). They are the client's existing names and are left exactly as found; the Figma file's Foundations page explains why.
 - `src/components/AddOnCard/` the component. Props mirror the Figma properties. Direction sets `dir` and the stylesheet uses logical properties, so there is no RTL stylesheet.
 - `AddOnCard.figma.tsx` the Code Connect mapping. Validated with `figma connect parse`. Publishing needs an Organisation plan, which this draft file does not have, so Dev Mode on the draft still shows Figma's generated code rather than this. The CLI is pinned to v1, the last major with the React parser; v2 moved to template files.
