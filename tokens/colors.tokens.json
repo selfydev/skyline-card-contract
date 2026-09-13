@@ -1,0 +1,162 @@
+{
+  "brand": {
+    "primary": {
+      "$type": "color",
+      "$value": "#0047ab"
+    },
+    "secondary": {
+      "$type": "color",
+      "$value": "#008cd4"
+    },
+    "Accent color": {
+      "$type": "color",
+      "$value": "#ff9900"
+    },
+    "dark": {
+      "$type": "color",
+      "$value": "#121726"
+    },
+    "tint": {
+      "$type": "color",
+      "$value": "#e0e8f5"
+    }
+  },
+  "neutral": {
+    "50": {
+      "$type": "color",
+      "$value": "#f7f7fa"
+    },
+    "100": {
+      "$type": "color",
+      "$value": "#f0f0f5"
+    },
+    "200": {
+      "$type": "color",
+      "$value": "#e0e0e8"
+    },
+    "300": {
+      "$type": "color",
+      "$value": "#c2c2cc"
+    },
+    "400": {
+      "$type": "color",
+      "$value": "#9999a8"
+    },
+    "500": {
+      "$type": "color",
+      "$value": "#707082"
+    },
+    "600": {
+      "$type": "color",
+      "$value": "#4d4d5e"
+    },
+    "700": {
+      "$type": "color",
+      "$value": "#333345"
+    },
+    "800": {
+      "$type": "color",
+      "$value": "#1f1f2e"
+    },
+    "900": {
+      "$type": "color",
+      "$value": "#12121c"
+    },
+    "white": {
+      "$type": "color",
+      "$value": "#ffffff"
+    },
+    "black": {
+      "$type": "color",
+      "$value": "#000000"
+    }
+  },
+  "semantic": {
+    "success": {
+      "$type": "color",
+      "$value": "#17b273"
+    },
+    "warning": {
+      "$type": "color",
+      "$value": "#f5b017"
+    },
+    "error": {
+      "$type": "color",
+      "$value": "#e83838"
+    },
+    "info": {
+      "$type": "color",
+      "$value": "#338ff5"
+    }
+  },
+  "background": {
+    "Primary": {
+      "$type": "color",
+      "$value": "{neutral.50}"
+    },
+    "secondary": {
+      "$type": "color",
+      "$value": "{neutral.white}"
+    },
+    "card": {
+      "$type": "color",
+      "$value": "{neutral.white}"
+    },
+    "media": {
+      "$type": "color",
+      "$value": "{brand.tint}"
+    },
+    "brand": {
+      "$type": "color",
+      "$value": "{brand.primary}"
+    },
+    "discount": {
+      "$type": "color",
+      "$value": "{semantic.error}"
+    }
+  },
+  "text": {
+    "primary": {
+      "$type": "color",
+      "$value": "{neutral.900}"
+    },
+    "secondary": {
+      "$type": "color",
+      "$value": "{neutral.500}"
+    },
+    "on-brand": {
+      "$type": "color",
+      "$value": "{neutral.white}"
+    },
+    "brand": {
+      "$type": "color",
+      "$value": "{brand.primary}"
+    },
+    "tertiary": {
+      "$type": "color",
+      "$value": "{neutral.400}"
+    },
+    "disabled": {
+      "$type": "color",
+      "$value": "{neutral.400}"
+    }
+  },
+  "border": {
+    "default": {
+      "$type": "color",
+      "$value": "{neutral.200}"
+    },
+    "subtle": {
+      "$type": "color",
+      "$value": "{neutral.100}"
+    },
+    "selected": {
+      "$type": "color",
+      "$value": "{brand.primary}"
+    },
+    "brand": {
+      "$type": "color",
+      "$value": "{brand.primary}"
+    }
+  }
+}
