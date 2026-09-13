@@ -28,3 +28,12 @@ export function diffTokens(fills: BoundFill[], tokens: Record<string, string>): 
   }
   return out;
 }
+
+export function diffTokensByValue(fills: BoundFill[], tokens: Record<string, string>): TokenDiff[] {
+  const values = new Set(Object.values(tokens).map((v) => v.toLowerCase()));
+  const out: TokenDiff[] = [];
+  for (const f of fills) {
+    if (!values.has(f.hex.toLowerCase())) out.push({ node: f.node, token: f.token, figma: f.hex, code: null });
+  }
+  return out;
+}
