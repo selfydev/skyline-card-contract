@@ -15,7 +15,7 @@ Built as part of a design system task. The Figma file is the source for tokens a
 
 ## Why it is shaped like this
 
-The scenario: designers detached instead of requesting, engineering said built components no longer matched Figma, and nobody could say which version was right. The file bore that out. Ten component sets, ten variants named after frame numbers, thirteen hardcoded fills, and on the screens page twelve card instances reaching a selected look by overriding the border instead of switching a variant, because the variant they needed did not exist.
+The scenario: designers detached instead of requesting, engineering said built components no longer matched Figma, and nobody could say which version was right. The file bore that out. Seven component sets and three single components, nine variants named after frame numbers, thirteen hardcoded fills, and on the screens page twelve card instances reaching a selected look by overriding the border instead of switching a variant, because the variant they needed did not exist.
 
 A report that says exactly what drifted, where, and when is the cheapest thing that makes "which version is right" a question with an answer. The AI part sits on top of a deterministic diff. It writes the issue a person would otherwise write on a Friday. It never decides what is correct.
 
