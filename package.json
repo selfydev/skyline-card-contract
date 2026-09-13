@@ -1,8 +1,7 @@
 {
   "name": "skyline-card-contract",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Figma to code contract for one airline card component: tokens, props, parity",
   "scripts": {
     "test": "vitest run",
     "dev": "vite",
@@ -11,11 +10,11 @@
     "parity": "tsx scripts/parity/run.ts",
     "typecheck": "tsc --noEmit"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Sam Santos",
   "license": "MIT",
   "type": "module",
-  "private": "false",
+  "private": false,
+  "repository": "github:selfydev/skyline-card-contract",
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
