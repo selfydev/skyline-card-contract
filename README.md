@@ -8,7 +8,7 @@ Built as part of a design system task. The Figma file is the source for tokens a
 
 - `tokens/` DTCG JSON exported from the Figma variable collections and text styles by `scripts/figma/export-tokens.js`, which runs inside Figma. Names are identical to Figma: `background/card` in Figma is `background.card` here and `--background-card` in CSS. Aliases are resolved to values at build time.
 - `src/components/AddOnCard/` the component. Props mirror the Figma properties. Direction sets `dir` and the stylesheet uses logical properties, so there is no RTL stylesheet.
-- `AddOnCard.figma.tsx` the Code Connect mapping. Validated with `figma connect parse`. Publishing needs an Organisation plan, which this draft file does not have, so Dev Mode on the draft still shows Figma's generated code rather than this.
+- `AddOnCard.figma.tsx` the Code Connect mapping. Validated with `figma connect parse`. Publishing needs an Organisation plan, which this draft file does not have, so Dev Mode on the draft still shows Figma's generated code rather than this. The CLI is pinned to v1, the last major with the React parser; v2 moved to template files.
 - `scripts/parity/` the check. Pulls the component set from the REST API, compares properties and options with the code contract, compares bound colours with the token export, prints a report, exits 1 on drift.
 - `.github/workflows/parity.yml` runs it every Monday. On drift it opens an issue. With an Anthropic key present the issue is written by Claude from the report; without one it posts the raw report.
 - `index.html` renders every variant in a grid. There is no Storybook. The contract is the tokens, the props and the check, not a rendering surface.
