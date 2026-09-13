@@ -1,7 +1,7 @@
 import figma from '@figma/code-connect';
 import { AddOnCard } from './AddOnCard';
 
-figma.connect(AddOnCard, 'https://www.figma.com/design/6vexI8lNMxoY1RJyX1oAZC/Skyline?node-id=70-400', {
+figma.connect(AddOnCard, 'https://www.figma.com/design/qpH64wRvJjZXUcGzND7ceU/Skyline-Air-design-system?node-id=70-400', {
   props: {
     state: figma.enum('State', { Default: 'default', Selected: 'selected', Disabled: 'disabled' }),
     direction: figma.enum('Direction', { LTR: 'ltr', RTL: 'rtl' }),

@@ -32,7 +32,7 @@ npm run dev
 
 ## Known limits
 
-- Figma's Variables REST endpoint is Enterprise only. On lower plans the parity check compares bound colours by value against the committed export, which catches a changed value but not a renamed token. The export script in `scripts/figma/export-variables.js` runs inside Figma and is the source of `tokens/` until that endpoint is available.
+- Figma's Variables REST endpoint is Enterprise only. On lower plans the parity check compares bound colours by value against the committed export, which catches a changed value but not a renamed token. The export script in `scripts/figma/export-tokens.js` runs inside Figma and is the source of `tokens/` until that endpoint is available.
 - One component. The shape scales by adding a props file per component and a set id per line in the workflow.
 - Text styles are exported but not checked by the parity script. Variables and component properties are. Extending the check to styles is a small addition once the file is on a plan with the styles endpoint.
 
