@@ -1,20 +1,20 @@
-/* src/components/AddOnCard/AddOnCard.css. Every value is a token except the literals noted below. Logical properties only, so RTL needs no extra rules. */
-/* Typography values here are literals on purpose. A later task exports text styles separately. */
+/* src/components/AddOnCard/AddOnCard.css. Logical properties only, so RTL needs no extra rules. */
+/* Every value here is a custom property generated from the Figma variables and text styles. The font family stays on system-ui because the exported family is Inter and the page does not load it. */
 .addon-card { inline-size: 280px; background: var(--background-card); border: 1px solid var(--border-default); border-radius: var(--radius-12); overflow: hidden; display: flex; flex-direction: column; font-family: system-ui, sans-serif; }
 .addon-card[data-state='selected'] { border: 2px solid var(--border-selected); }
 .addon-card[data-state='disabled'] { opacity: 0.5; }
 .addon-card__media { position: relative; block-size: 140px; background: var(--background-media); display: grid; place-items: center; }
 .addon-card__placeholder { inline-size: 48px; block-size: 48px; border-radius: 50%; background: color-mix(in srgb, var(--brand-primary) 15%, transparent); }
-.addon-card__badge { position: absolute; inset-block-start: 12px; inset-inline-end: 12px; padding: 4px 8px; border-radius: var(--radius-4); background: var(--background-discount); color: var(--text-on-brand); font-size: 11px; line-height: 16px; letter-spacing: 0.5px; font-weight: 700; }
+.addon-card__badge { position: absolute; inset-block-start: 12px; inset-inline-end: 12px; padding: 4px 8px; border-radius: var(--radius-4); background: var(--background-discount); color: var(--text-on-brand); font-size: var(--text-styles-label-badge-font-size); line-height: var(--text-styles-label-badge-line-height); letter-spacing: var(--text-styles-label-badge-letter-spacing); font-weight: var(--text-styles-label-badge-font-weight); }
 .addon-card__body { display: flex; flex-direction: column; gap: var(--spacing-8); padding: var(--spacing-16); }
-.addon-card__title { margin: 0; font-size: 16px; line-height: 24px; font-weight: 600; color: var(--text-primary); }
+.addon-card__title { margin: 0; font-size: var(--text-styles-heading-h4-font-size); line-height: var(--text-styles-heading-h4-line-height); font-weight: var(--text-styles-heading-h4-font-weight); color: var(--text-primary); }
 .addon-card[data-state='disabled'] .addon-card__title { color: var(--text-disabled); }
-.addon-card__description { margin: 0; font-size: 12px; line-height: 16px; color: var(--text-secondary); }
+.addon-card__description { margin: 0; font-size: var(--text-styles-body-small-font-size); line-height: var(--text-styles-body-small-line-height); font-weight: var(--text-styles-body-small-font-weight); letter-spacing: var(--text-styles-body-small-letter-spacing); color: var(--text-secondary); }
 .addon-card__row { display: flex; align-items: center; justify-content: space-between; gap: var(--spacing-8); }
 .addon-card__prices { display: flex; align-items: baseline; gap: 8px; }
-.addon-card__price { font-size: 18px; line-height: 24px; font-weight: 700; color: var(--text-brand); }
-.addon-card__original { font-size: 12px; line-height: 16px; color: var(--text-tertiary); }
-.addon-card__cta { padding: 6px 16px; border-radius: var(--radius-full); font-size: 12px; line-height: 16px; letter-spacing: 0.2px; font-weight: 500; cursor: pointer; }
+.addon-card__price { font-size: var(--text-styles-price-medium-font-size); line-height: var(--text-styles-price-medium-line-height); font-weight: var(--text-styles-price-medium-font-weight); color: var(--text-brand); }
+.addon-card__original { font-size: var(--text-styles-body-small-font-size); line-height: var(--text-styles-body-small-line-height); font-weight: var(--text-styles-body-small-font-weight); color: var(--text-tertiary); }
+.addon-card__cta { padding: 6px 16px; border-radius: var(--radius-full); font-size: var(--text-styles-label-mini-font-size); line-height: var(--text-styles-label-mini-line-height); letter-spacing: var(--text-styles-label-mini-letter-spacing); font-weight: var(--text-styles-label-mini-font-weight); cursor: pointer; }
 .addon-card__cta[data-variant='secondary'] { background: transparent; border: 1.5px solid var(--border-brand); color: var(--text-brand); }
 .addon-card__cta[data-variant='primary'] { background: var(--background-brand); border: 1.5px solid var(--border-brand); color: var(--text-on-brand); }
 .addon-card__cta:disabled { cursor: not-allowed; }
