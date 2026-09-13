@@ -3,7 +3,10 @@ import { ADD_ON_CARD_PROPS } from '../../src/components/AddOnCard/AddOnCard.prop
 import { diffProps } from './diff-props';
 import { diffTokens, diffTokensByValue, flattenDtcg } from './diff-tokens';
 import { boundFillsFromSet, fetchCardSet, propsFromSet, variableNames } from './fetch-figma';
+import { loadEnvFile } from './load-env';
 import { report } from './report';
+
+loadEnvFile();
 
 const need = (k: string) => { const v = process.env[k]; if (!v) { console.error(`missing env ${k}`); process.exit(2); } return v; };
 
