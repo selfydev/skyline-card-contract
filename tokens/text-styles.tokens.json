@@ -18,7 +18,7 @@
           "fontWeight": 700,
           "fontSize": "22px",
           "lineHeight": "28px",
-          "letterSpacing": "-0.30000001192092896px"
+          "letterSpacing": "-0.3px"
         }
       },
       "H3": {
@@ -28,7 +28,7 @@
           "fontWeight": 600,
           "fontSize": "18px",
           "lineHeight": "24px",
-          "letterSpacing": "-0.20000000298023224px"
+          "letterSpacing": "-0.2px"
         }
       },
       "Subheading": {
@@ -38,7 +38,7 @@
           "fontWeight": 600,
           "fontSize": "14px",
           "lineHeight": "20px",
-          "letterSpacing": "0.10000000149011612px"
+          "letterSpacing": "0.1px"
         }
       },
       "H4": {
@@ -80,7 +80,7 @@
           "fontWeight": 400,
           "fontSize": "12px",
           "lineHeight": "16px",
-          "letterSpacing": "0.10000000149011612px"
+          "letterSpacing": "0.1px"
         }
       }
     },
@@ -92,7 +92,7 @@
           "fontWeight": 500,
           "fontSize": "14px",
           "lineHeight": "20px",
-          "letterSpacing": "0.10000000149011612px"
+          "letterSpacing": "0.1px"
         }
       },
       "Mini": {
@@ -102,7 +102,7 @@
           "fontWeight": 500,
           "fontSize": "12px",
           "lineHeight": "16px",
-          "letterSpacing": "0.20000000298023224px"
+          "letterSpacing": "0.2px"
         }
       },
       "Badge": {
@@ -124,7 +124,7 @@
           "fontWeight": 700,
           "fontSize": "20px",
           "lineHeight": "28px",
-          "letterSpacing": "-0.20000000298023224px"
+          "letterSpacing": "-0.2px"
         }
       },
       "Small": {

@@ -18,11 +18,12 @@ for (const col of cols) {
   out[col.name.toLowerCase()] = tree;
 }
 const weight = { Thin: 100, 'Extra Light': 200, Light: 300, Regular: 400, Medium: 500, 'Semi Bold': 600, Bold: 700, 'Extra Bold': 800, Black: 900 };
+const round2 = (v) => Math.round(v * 100) / 100;
 const styles = await figma.getLocalTextStylesAsync();
 const ts = {};
 for (const s of styles) {
-  const ls = s.letterSpacing.unit === 'PIXELS' ? s.letterSpacing.value + 'px' : s.letterSpacing.value + '%';
-  const lh = s.lineHeight.unit === 'PIXELS' ? s.lineHeight.value + 'px' : s.lineHeight.unit === 'PERCENT' ? s.lineHeight.value + '%' : 'normal';
+  const ls = s.letterSpacing.unit === 'PIXELS' ? round2(s.letterSpacing.value) + 'px' : round2(s.letterSpacing.value) + '%';
+  const lh = s.lineHeight.unit === 'PIXELS' ? round2(s.lineHeight.value) + 'px' : s.lineHeight.unit === 'PERCENT' ? round2(s.lineHeight.value) + '%' : 'normal';
   setPath(ts, s.name, {
     $type: 'typography',
     $value: { fontFamily: s.fontName.family, fontWeight: weight[s.fontName.style] || 400, fontSize: s.fontSize + 'px', lineHeight: lh, letterSpacing: ls },

@@ -22,7 +22,7 @@ export default {
     css: {
       transforms: ['name/kebab', 'color/css'],
       buildPath: 'build/',
-      files: [{ destination: 'tokens.css', format: 'css/variables-with-typography', options: { outputReferences: true } }],
+      files: [{ destination: 'tokens.css', format: 'css/variables-with-typography' }],
     },
   },
 };

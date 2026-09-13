@@ -12,6 +12,17 @@ function Matrix() {
     const cta = state === 'selected' ? (direction === 'rtl' ? 'تمت الإضافة' : 'Added') : direction === 'rtl' ? 'إضافة' : 'Add';
     cards.push(<AddOnCard key={`${direction}-${state}-${discount}`} state={state} direction={direction} discount={discount} ctaLabel={cta} {...copy} />);
   }
-  return (<><h1>Add-on Card, every variant, no Storybook</h1><div className="grid">{cards}</div></>);
+  cards.push(
+    <AddOnCard
+      key="no-description"
+      state="default"
+      direction="ltr"
+      showDescription={false}
+      title="Extra bag"
+      price="$60.00"
+      ctaLabel="Add"
+    />,
+  );
+  return (<><h1>Add-on Card, every state and direction, plus the two booleans</h1><div className="grid">{cards}</div></>);
 }
 createRoot(document.getElementById('root')!).render(<Matrix />);

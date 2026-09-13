@@ -31,9 +31,12 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GH_TOKEN: ${{ github.token }}
         run: |
-          npm i -g @anthropic-ai/claude-code
+          npm i -g @anthropic-ai/claude-code@2.1.270
           claude -p "Read parity-report.md. Write a GitHub issue for the design system owner. Title under 70 characters. Body: what drifted in one paragraph, who most likely changed it and when (say unknown if the report does not say), the decision the owner has to make, and the command to re-run the check. Plain sentences, sentence case, no em dashes. Output only the issue body, the first line is the title." --output-format text > issue.md
           gh issue create --title "$(head -1 issue.md)" --body "$(tail -n +2 issue.md)" --label drift
+      - name: Ensure a report exists before the fallback issue
+        if: steps.parity.outcome == 'failure' && steps.keys.outputs.claude == 'false'
+        run: '[ -f parity-report.md ] || echo "Parity run failed before producing a report. See the workflow log." > parity-report.md'
       - name: Fallback issue without Claude
         if: steps.parity.outcome == 'failure' && steps.keys.outputs.claude == 'false'
         env:

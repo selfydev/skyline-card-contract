@@ -13,7 +13,7 @@ const figma: Record<string, FigmaPropDef> = {
 
 describe('diffProps', () => {
   it('reports nothing when figma and code agree', () => {
-    expect(diffProps(figma, ADD_ON_CARD_PROPS)).toEqual({ onlyInFigma: [], onlyInCode: [], optionMismatch: [] });
+    expect(diffProps(figma, ADD_ON_CARD_PROPS)).toEqual({ onlyInFigma: [], onlyInCode: [], optionMismatch: [], typeMismatch: [] });
   });
   it('reports a property only in figma', () => {
     const d = diffProps({ ...figma, 'Ribbon#9:9': { type: 'BOOLEAN' } }, ADD_ON_CARD_PROPS);
@@ -26,5 +26,13 @@ describe('diffProps', () => {
   it('reports variant options that differ', () => {
     const d = diffProps({ ...figma, State: { type: 'VARIANT', variantOptions: ['Default', 'Selected', 'Disabled', 'Loading'] } }, ADD_ON_CARD_PROPS);
     expect(d.optionMismatch).toEqual([{ prop: 'state', figma: ['default', 'selected', 'disabled', 'loading'], code: ['default', 'selected', 'disabled'] }]);
+  });
+  it('does not report drift when variant options are only reordered', () => {
+    const d = diffProps({ ...figma, State: { type: 'VARIANT', variantOptions: ['Selected', 'Default', 'Disabled'] } }, ADD_ON_CARD_PROPS);
+    expect(d.optionMismatch).toEqual([]);
+  });
+  it('reports a type mismatch when a boolean becomes a variant', () => {
+    const d = diffProps({ ...figma, 'Discount': { type: 'VARIANT', variantOptions: ['On', 'Off'] } }, ADD_ON_CARD_PROPS);
+    expect(d.typeMismatch).toEqual([{ prop: 'discount', figma: 'VARIANT', code: 'boolean' }]);
   });
 });
