@@ -31,4 +31,16 @@ describe('AddOnCard', () => {
     render(<AddOnCard {...base} media={<img alt="Lounge" src="x.jpg" />} />);
     expect(screen.getByAltText('Lounge')).toBeInTheDocument();
   });
+  it('renders the default selected label when selected', () => {
+    render(<AddOnCard {...base} state="selected" />);
+    expect(screen.getByRole('button', { name: '✓ Added' })).toBeInTheDocument();
+  });
+  it('renders a custom selected label when passed', () => {
+    render(<AddOnCard {...base} state="selected" selectedLabel="In your trip" />);
+    expect(screen.getByRole('button', { name: 'In your trip' })).toBeInTheDocument();
+  });
+  it('still renders ctaLabel when the card is not selected', () => {
+    render(<AddOnCard {...base} selectedLabel="✓ Added" />);
+    expect(screen.getByRole('button', { name: 'Add' })).toBeInTheDocument();
+  });
 });

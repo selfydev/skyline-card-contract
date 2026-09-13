@@ -13,9 +13,10 @@ figma.connect(AddOnCard, 'https://www.figma.com/design/qpH64wRvJjZXUcGzND7ceU/Sk
     originalPrice: figma.string('Original price'),
     badgeLabel: figma.string('Badge label'),
     ctaLabel: figma.string('CTA label'),
+    selectedLabel: figma.string('Selected label'),
     media: figma.instance('Media'),
   },
   example: (p) => (
-    <AddOnCard state={p.state} direction={p.direction} discount={p.discount} showDescription={p.showDescription} title={p.title} description={p.description} price={p.price} originalPrice={p.originalPrice} badgeLabel={p.badgeLabel} ctaLabel={p.ctaLabel} media={p.media} />
+    <AddOnCard state={p.state} direction={p.direction} discount={p.discount} showDescription={p.showDescription} title={p.title} description={p.description} price={p.price} originalPrice={p.originalPrice} badgeLabel={p.badgeLabel} ctaLabel={p.ctaLabel} selectedLabel={p.selectedLabel} media={p.media} />
   ),
 });

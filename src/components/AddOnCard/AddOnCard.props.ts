@@ -10,6 +10,7 @@ export const ADD_ON_CARD_PROPS = {
   originalPrice: 'text',
   badgeLabel: 'text',
   ctaLabel: 'text',
+  selectedLabel: 'text',
 } as const;
 
 export type AddOnCardState = (typeof ADD_ON_CARD_PROPS.state)[number];

@@ -9,6 +9,7 @@ const figma: Record<string, FigmaPropDef> = {
   'Media#1:2': { type: 'INSTANCE_SWAP' },
   'Title#1:3': { type: 'TEXT' }, 'Description#1:4': { type: 'TEXT' }, 'Price#1:5': { type: 'TEXT' },
   'Original price#1:6': { type: 'TEXT' }, 'Badge label#1:7': { type: 'TEXT' }, 'CTA label#1:8': { type: 'TEXT' },
+  'Selected label#1:9': { type: 'TEXT' },
 };
 
 describe('diffProps', () => {

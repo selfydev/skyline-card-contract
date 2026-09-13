@@ -13,12 +13,14 @@ export interface AddOnCardProps {
   discount?: boolean;
   originalPrice?: string;
   badgeLabel?: string;
+  selectedLabel?: string;
   media?: ReactNode;
   onSelect?: () => void;
 }
 
-export function AddOnCard({ state, direction, title, price, ctaLabel, description, showDescription = true, discount = false, originalPrice, badgeLabel, media, onSelect }: AddOnCardProps) {
+export function AddOnCard({ state, direction, title, price, ctaLabel, description, showDescription = true, discount = false, originalPrice, badgeLabel, selectedLabel = '✓ Added', media, onSelect }: AddOnCardProps) {
   const disabled = state === 'disabled';
+  const buttonLabel = state === 'selected' ? selectedLabel : ctaLabel;
   return (
     <article className="addon-card" dir={direction} data-state={state} aria-disabled={disabled || undefined}>
       <div className="addon-card__media">
@@ -34,7 +36,7 @@ export function AddOnCard({ state, direction, title, price, ctaLabel, descriptio
             {discount && originalPrice ? <s className="addon-card__original" aria-label={`Original price ${originalPrice}`}>{originalPrice}</s> : null}
           </div>
           <button type="button" className="addon-card__cta" data-variant={state === 'selected' ? 'primary' : 'secondary'} disabled={disabled} onClick={onSelect}>
-            {ctaLabel}
+            {buttonLabel}
           </button>
         </div>
       </div>
