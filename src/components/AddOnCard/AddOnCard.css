@@ -14,7 +14,8 @@
 .addon-card__prices { display: flex; align-items: baseline; gap: 8px; }
 .addon-card__price { font-size: var(--text-styles-price-medium-font-size); line-height: var(--text-styles-price-medium-line-height); font-weight: var(--text-styles-price-medium-font-weight); color: var(--text-brand); }
 .addon-card__original { font-size: var(--text-styles-body-small-font-size); line-height: var(--text-styles-body-small-line-height); font-weight: var(--text-styles-body-small-font-weight); color: var(--text-tertiary); }
-.addon-card__cta { padding: 6px 16px; border-radius: var(--radius-full); font-size: var(--text-styles-label-mini-font-size); line-height: var(--text-styles-label-mini-line-height); letter-spacing: var(--text-styles-label-mini-letter-spacing); font-weight: var(--text-styles-label-mini-font-weight); cursor: pointer; }
+.addon-card__cta { display: inline-flex; align-items: center; gap: var(--spacing-4); padding: 6px 16px; border-radius: var(--radius-full); font-size: var(--text-styles-label-mini-font-size); line-height: var(--text-styles-label-mini-line-height); letter-spacing: var(--text-styles-label-mini-letter-spacing); font-weight: var(--text-styles-label-mini-font-weight); cursor: pointer; }
+.addon-card__check { flex: none; }
 .addon-card__cta[data-variant='secondary'] { background: transparent; border: 1.5px solid var(--border-brand); color: var(--text-brand); }
 .addon-card__cta[data-variant='primary'] { background: var(--background-brand); border: 1.5px solid var(--border-brand); color: var(--text-on-brand); }
 .addon-card__cta:disabled { cursor: not-allowed; }

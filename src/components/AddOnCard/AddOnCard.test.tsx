@@ -33,14 +33,24 @@ describe('AddOnCard', () => {
   });
   it('renders the default selected label when selected', () => {
     render(<AddOnCard {...base} state="selected" />);
-    expect(screen.getByRole('button', { name: '✓ Added' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Added' })).toBeInTheDocument();
+  });
+  it('renders a check icon before the label when selected', () => {
+    render(<AddOnCard {...base} state="selected" />);
+    const button = screen.getByRole('button', { name: 'Added' });
+    expect(button.querySelector('svg')).toBeInTheDocument();
+    expect(screen.getByText('Added').tagName).toBe('SPAN');
+  });
+  it('renders no icon when the card is not selected', () => {
+    render(<AddOnCard {...base} />);
+    expect(screen.getByRole('button', { name: 'Add' }).querySelector('svg')).not.toBeInTheDocument();
   });
   it('renders a custom selected label when passed', () => {
     render(<AddOnCard {...base} state="selected" selectedLabel="In your trip" />);
     expect(screen.getByRole('button', { name: 'In your trip' })).toBeInTheDocument();
   });
   it('still renders ctaLabel when the card is not selected', () => {
-    render(<AddOnCard {...base} selectedLabel="✓ Added" />);
+    render(<AddOnCard {...base} selectedLabel="Added" />);
     expect(screen.getByRole('button', { name: 'Add' })).toBeInTheDocument();
   });
 });

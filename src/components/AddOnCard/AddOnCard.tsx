@@ -18,7 +18,7 @@ export interface AddOnCardProps {
   onSelect?: () => void;
 }
 
-export function AddOnCard({ state, direction, title, price, ctaLabel, description, showDescription = true, discount = false, originalPrice, badgeLabel, selectedLabel = '✓ Added', media, onSelect }: AddOnCardProps) {
+export function AddOnCard({ state, direction, title, price, ctaLabel, description, showDescription = true, discount = false, originalPrice, badgeLabel, selectedLabel = 'Added', media, onSelect }: AddOnCardProps) {
   const disabled = state === 'disabled';
   const buttonLabel = state === 'selected' ? selectedLabel : ctaLabel;
   return (
@@ -36,7 +36,12 @@ export function AddOnCard({ state, direction, title, price, ctaLabel, descriptio
             {discount && originalPrice ? <s className="addon-card__original" aria-label={`Original price ${originalPrice}`}>{originalPrice}</s> : null}
           </div>
           <button type="button" className="addon-card__cta" data-variant={state === 'selected' ? 'primary' : 'secondary'} disabled={disabled} onClick={onSelect}>
-            {buttonLabel}
+            {state === 'selected' ? (
+              <svg className="addon-card__check" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <path d="M3.5 8.5 6.5 11.5 12.5 5.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            ) : null}
+            <span>{buttonLabel}</span>
           </button>
         </div>
       </div>
